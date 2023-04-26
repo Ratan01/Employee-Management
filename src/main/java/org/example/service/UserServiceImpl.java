@@ -34,13 +34,11 @@ public class UserServiceImpl implements UserService{
         User user = new User(registrationDto.getFirstName(),
                 registrationDto.getLastName(), registrationDto.getEmail(),
                 passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
-
         return userRepository.save(user);
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
         User user = userRepository.findByEmail(username);
         if(user == null) {
             throw new UsernameNotFoundException("Invalid username or password.");
