@@ -1,23 +1,20 @@
 package org.example.service;
 
-
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import org.example.dto.UserRegistrationDto;
 
+import org.example.dto.UserRegistrationDto;
 import org.example.entity.Role;
 import org.example.entity.User;
 import org.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -32,7 +29,7 @@ public class UserServiceImpl implements UserService{
         this.userRepository = userRepository;
     }
 
-    @Override
+    /*@Override
     public User save(UserRegistrationDto registrationDto) {
         User user = new User(registrationDto.getFirstName(),
                 registrationDto.getLastName(), registrationDto.getEmail(),
@@ -53,5 +50,5 @@ public class UserServiceImpl implements UserService{
 
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-    }
+    }*/
 }
