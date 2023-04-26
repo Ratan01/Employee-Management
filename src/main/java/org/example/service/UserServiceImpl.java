@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
         this.userRepository = userRepository;
     }
 
-    /*@Override
+    @Override
     public User save(UserRegistrationDto registrationDto) {
         User user = new User(registrationDto.getFirstName(),
                 registrationDto.getLastName(), registrationDto.getEmail(),
@@ -50,5 +50,5 @@ public class UserServiceImpl implements UserService{
 
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-    }*/
+    }
 }
